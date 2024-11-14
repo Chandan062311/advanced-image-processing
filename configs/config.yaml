@@ -1,0 +1,30 @@
+# src/config.py
+
+directories:
+  raw: data/raw
+  augmented: data/augmented
+  processed: data/processed
+
+pexels:
+  api_key: "Ot0PAMP8Tdy6P9MDwKPsCZTXrwlG9F0wRCvkaSJe7uJGCDvCZVf2bIbh"  # Replace with your actual Pexels API Key
+  queries:
+    - "nature"
+    - "technology"
+    - "architecture"
+  per_page: 5
+
+augmentation:
+  rotate: 15
+  flip: true
+
+edge_detection:
+  threshold1: 100
+  threshold2: 200
+
+object_detection:
+  cascade: 'haarcascade_frontalface_default.xml'
+  color: [0, 255, 0]
+  thickness: 2
+
+feature_extraction:
+  method: 'ORB'
