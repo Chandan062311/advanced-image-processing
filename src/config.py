@@ -2,6 +2,7 @@
 
 import yaml
 import os
+from dotenv import load_dotenv
 
 def load_config(config_path=None):
     """
@@ -14,6 +15,7 @@ def load_config(config_path=None):
     Returns:
         dict: Configuration parameters.
     """
+    load_dotenv()  # Load environment variables from .env
     if config_path is None:
         # Get the directory of the current file (src)
         current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -25,5 +27,7 @@ def load_config(config_path=None):
 
     with open(config_path, 'r') as file:
         config = yaml.safe_load(file)
+        # Load API keys from environment variables if they exist
+        config['pexels']['api_key'] = os.getenv('PEXELS_API_KEY', config['pexels']['api_key'])
 
     return config

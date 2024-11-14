@@ -6,7 +6,7 @@ directories:
   processed: data/processed
 
 pexels:
-  api_key: "Ot0PAMP8Tdy6P9MDwKPsCZTXrwlG9F0wRCvkaSJe7uJGCDvCZVf2bIbh"  # Replace with your actual Pexels API Key
+  api_key: "${PEXELS_API_KEY}"  # Loaded from environment variable
   queries:
     - "nature"
     - "technology"
